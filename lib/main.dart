@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -10,14 +6,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Food Reservation',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const MyHomePage(),
     );
@@ -57,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 CircleAvatar(
                   radius: 8,
+                  backgroundColor: Colors.white,
                   child: Text(
                     '$counter',
                     style: const TextStyle(fontSize: 11),
@@ -281,11 +277,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title),
+                Text(title, style: const TextStyle(fontWeight: FontWeight.bold),),
                 const SizedBox(
                   height: 10,
                 ),
-                Text("\$$price"),
+                Text("\$$price", style: const TextStyle(color: Colors.deepPurple),),
               ],
             ),
           ),
